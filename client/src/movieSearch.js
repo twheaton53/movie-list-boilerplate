@@ -19,7 +19,11 @@ var search = (target, callback) => {
           count++;
         }
       }
-      callback(result);
+      if (count === 0) {
+        callback(noMovies);
+      } else {
+        callback(result);
+      }
     })
     .catch((err) => {console.log(err)});
 
